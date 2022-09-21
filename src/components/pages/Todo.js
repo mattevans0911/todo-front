@@ -6,13 +6,14 @@ function Todo() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/todo/get")
+    fetch("https://stark-earth-77303.herokuapp.com/todo/get") //http://127.0.0.1:5000
       .then((response) => response.json())
       .then((response) => setTodo(response));
   }, []);
 
   const handleFormSubmit = () => {
-    fetch("http://127.0.0.1:5000/todo/add", {
+    fetch("https://stark-earth-77303.herokuapp.com/todo/add", {
+      //http://127.0.0.1:5000
       method: "POST",
       body: JSON.stringify({
         content: content,
@@ -37,11 +38,13 @@ function Todo() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://127.0.0.1:5000/todo/delete/${id}`).then((response) => {
-      console.log(response);
-      const deletedTodo = todo.filter((item) => item.id !== id);
-      setTodo(deletedTodo);
-    });
+    axios
+      .delete(`https://stark-earth-77303.herokuapp.com/todo/delete/${id}`) //http://127.0.0.1:5000
+      .then((response) => {
+        console.log(response);
+        const deletedTodo = todo.filter((item) => item.id !== id);
+        setTodo(deletedTodo);
+      });
   };
 
   return (
