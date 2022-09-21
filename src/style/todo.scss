@@ -1,0 +1,132 @@
+.form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .form-title {
+      font-size: 3em;
+      color: #00fdcb;
+      margin-bottom: -15px;
+    }
+
+    .todo-input {
+      font-size: 1.25em;
+      margin-bottom: 15px;
+      width: 50%;
+      border: 2px solid #00fdcb;
+
+      background-color: whitesmoke;
+    }
+
+    .add-todo-button {
+      background-color: #00fdcb;
+      color: #864aff;
+      font-size: 1.5em;
+      font-weight: bold;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        background-color: #864aff;
+        color: #00fdcb;
+        border: 2px solid #00fdcb;
+      }
+    }
+  }
+
+  .todos-wrapper {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+
+    .todo-title {
+      font-size: 4em;
+      color: #00fdcb;
+    }
+  }
+
+  .render-wrapper {
+    border: 2px solid #00fdcb;
+    border-radius: 15px;
+    padding: 2px;
+    width: 50%;
+  }
+}
+
+.rendered-todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  .todo-content {
+    font-size: 2em;
+    color: #00fdcb;
+  }
+
+  .delete-todo-button {
+    background-color: #00fdcb;
+    color: #864aff;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      background-color: #864aff;
+      color: #00fdcb;
+      border: 2px solid #00fdcb;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .form-wrapper {
+    display: grid;
+    grid-template-columns: auto;
+
+    .form {
+      height: 30vh;
+
+      .form-title {
+        font-size: 2em;
+        text-align: center;
+      }
+    }
+
+    .todos-wrapper {
+      .todo-title {
+        font-size: 2.5em;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .render-wrapper {
+        width: 75vw;
+
+        overflow: auto;
+
+        .todos {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

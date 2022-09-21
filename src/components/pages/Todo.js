@@ -29,9 +29,14 @@ function Todo() {
   const renderTodo = () => {
     return todo.map((todos) => {
       return (
-        <div key={todos.id} id={todos.id}>
-          <div>{todos.content}</div>
-          <button onClick={(e) => handleDelete(todos.id, e)}>Delete</button>
+        <div key={todos.id} className="rendered-todo">
+          <div className="todo-content">{todos.content}</div>
+          <button
+            className="delete-todo-button"
+            onClick={(e) => handleDelete(todos.id, e)}
+          >
+            Delete
+          </button>
         </div>
       );
     });
@@ -63,8 +68,8 @@ function Todo() {
           </button>
         </form>
         <div className="todos-wrapper">
-          <div className="wrapper-two">
-            <h2 className="todo-title">What To Do?</h2>
+          <h2 className="todo-title">What To Do?</h2>
+          <div className="render-wrapper">
             <div className="todos">{renderTodo()}</div>
           </div>
         </div>
